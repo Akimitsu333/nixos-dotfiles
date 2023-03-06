@@ -26,8 +26,6 @@
     ".mozilla/firefox/default/user.js".source = ../dot/firefox/chrome/firefox-gnome-theme/configuration/user.js;
     ".mozilla/firefox/default/chrome".source = ../dot/firefox/chrome;
     ".mozilla/firefox/default/chrome".recursive = true;
-    ".mozilla/firefox/default/firefox-gnome-theme".source = ../dot/firefox/firefox-gnome-theme;
-    ".mozilla/firefox/default/firefox-gnome-theme".recursive = true;
   };
 
   programs.direnv = {
