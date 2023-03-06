@@ -1,0 +1,3 @@
+[submodule "modules/home-manager/dot/firefox/chrome/firefox-gnome-theme"]
+	path = modules/home-manager/dot/firefox/chrome/firefox-gnome-theme
+	url = https://github.com/rafaelmardojai/firefox-gnome-theme
