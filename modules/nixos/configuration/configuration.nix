@@ -49,6 +49,14 @@ in
     #"xanmod"
   ];
 
+  ## NORMAL KERNEL
+  specialisation.normal-kernel.configuration = {
+    system.nixos.tags = [ "normal-kernel" ];
+    musnix.kernel.realtime = false;
+    musnix.rtirq.enable = false;
+    boot.kernelPatches = null;
+  };
+
   # OPENGL & NVIDIA
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
