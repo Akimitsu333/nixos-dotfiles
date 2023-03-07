@@ -61,8 +61,8 @@ in
   # I18N
   time.timeZone = "Asia/Shanghai";
   i18n.defaultLocale = "zh_CN.UTF-8";
-  i18n.inputMethod.enabled = "ibus";
-  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
+  # i18n.inputMethod.enabled = "ibus";
+  # i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
 
 
   # FONTS
@@ -101,6 +101,7 @@ in
 
   # SECURITY
   security.tpm2.enable = true;
+  security.sudo.execWheelOnly = true;
   security.sudo.wheelNeedsPassword = false;
 
   # NETWORKING
