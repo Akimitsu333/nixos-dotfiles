@@ -5,9 +5,9 @@ let
     path: (builtins.map
       (name: {
         inherit name;
-        patch = "./patches/${path}/${name}";
+        patch = ./patches+ "${path}/${name}";
       })
-      (builtins.attrNames (builtins.readDir "./patches/${path}")));
+      (builtins.attrNames (builtins.readDir (./patches + "/${path}"))));
   addPatches = paths: builtins.concatLists (builtins.map _addPatches paths);
 in
 {
