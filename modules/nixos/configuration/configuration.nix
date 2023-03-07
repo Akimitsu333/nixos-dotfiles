@@ -37,7 +37,7 @@ in
   #musnix.rtirq.enable = true;
 
   ## PATCHES
-  boot.kernelPatches = addPatches [ bbr2 ] ++ [
+  boot.kernelPatches = addPatches [ bbr2 wine ] ++ [
     {
       name = "xanmod-config";
       patch = null;
