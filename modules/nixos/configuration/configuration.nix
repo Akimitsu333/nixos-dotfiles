@@ -52,9 +52,9 @@ in
   ## NORMAL KERNEL
   specialisation.normal-kernel.configuration = {
     system.nixos.tags = [ "normal-kernel" ];
-    musnix.kernel.realtime = false;
-    musnix.rtirq.enable = false;
-    boot.kernelPatches = null;
+    musnix.kernel.realtime = lib.mkForce false;
+    musnix.rtirq.enable = lib.mkForce false;
+    boot.kernelPatches = lib.mkForce null;
   };
 
   # OPENGL & NVIDIA
