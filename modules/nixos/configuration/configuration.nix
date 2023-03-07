@@ -8,7 +8,7 @@ let
         patch = "./patches/${path}/${name}";
       })
       (builtins.attrNames (builtins.readDir (./patches + "/${path}"))));
-  addPatches = paths: builtins.concatLists (builtins.map _addPatches paths);
+  addPatches = paths: (builtins.map _addPatches paths);
 in
 {
   # USERS
