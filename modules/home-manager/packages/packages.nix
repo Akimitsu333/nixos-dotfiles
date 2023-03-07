@@ -18,8 +18,9 @@
       # FMT
       nixpkgs-fmt
       # Tools
-      ripgrep
       fd
+      ripgrep
+      # nix-index
     ];
 
   home.file = {

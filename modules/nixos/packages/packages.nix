@@ -2,8 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # IBus Method
-    ibus-engines.libpinyin
     # Gnome Theme
     kora-icon-theme
     bibata-cursors
@@ -20,7 +18,6 @@
     winetricks
     # Tools
     lsof
-    helvum
   ];
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos

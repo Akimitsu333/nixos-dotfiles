@@ -51,7 +51,7 @@ in
 
   ## NORMAL KERNEL
   specialisation.normal-kernel.configuration = {
-    system.nixos.tags = [ "normal-kernel" ];
+    system.nixos.tags = [ "laptop" ];
     musnix.kernel.realtime = lib.mkForce false;
     musnix.rtirq.enable = lib.mkForce false;
     boot.kernelPatches = lib.mkForce [ ];
@@ -70,8 +70,8 @@ in
   # I18N
   time.timeZone = "Asia/Shanghai";
   i18n.defaultLocale = "zh_CN.UTF-8";
-  # i18n.inputMethod.enabled = "ibus";
-  # i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
+  i18n.inputMethod.enabled = "ibus";
+  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
 
 
   # FONTS

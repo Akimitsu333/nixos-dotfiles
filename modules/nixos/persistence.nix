@@ -23,6 +23,7 @@
         #{ directory = ".local/share/Trash"; mode = "0700"; }
         ".config"
         #".cache"
+        ".wine"
         ".mozilla"
         ".vscode-oss"
         ".local/share/fish"
