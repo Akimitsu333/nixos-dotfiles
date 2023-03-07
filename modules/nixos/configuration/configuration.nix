@@ -33,18 +33,22 @@ in
   #musnix.rtirq.enable = true;
 
   ## PATCHES
-  boot.kernelPatches = addPatches [
-    "bbr2"
-    "wine"
-  ] ++ [
+  boot.kernelPatches = [
     {
       name = "xanmod-config";
       patch = null;
       extraConfig = ''
         TCP_CONG_BBR2 y
         DEFAULT_BBR2 y
+        FUTEX y
+        FUTEX_PI y
+        WINESYNC m
       '';
     }
+  ] ++ addPatches [
+    "bbr2"
+    #"wine"
+    "clearlinux"
   ];
 
   # OPENGL & NVIDIA
