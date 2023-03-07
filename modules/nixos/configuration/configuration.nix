@@ -8,7 +8,7 @@ let
         patch = "./patches/${path}/${name}";
       })
       (builtins.attrNames (builtins.readDir "./patches/${path}")));
-  addPatches = paths: concatLists (builtins.map _addPatches paths);
+  addPatches = paths: builtins.concatLists (builtins.map _addPatches paths);
 in
 {
   # USERS
@@ -37,7 +37,7 @@ in
   #musnix.rtirq.enable = true;
 
   ## PATCHES
-  boot.kernelPatches = addPatches [ bbr2 wine ] ++ [
+  boot.kernelPatches = addPatches [ "bbr2" "wine" ] ++ [
     {
       name = "xanmod-config";
       patch = null;
