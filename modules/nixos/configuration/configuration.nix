@@ -49,6 +49,7 @@ in
     "bbr2"
     #"wine"
     "clearlinux"
+    #"xanmod"
   ];
 
   # OPENGL & NVIDIA
