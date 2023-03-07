@@ -40,15 +40,12 @@ in
       extraConfig = ''
         TCP_CONG_BBR2 y
         DEFAULT_BBR2 y
-        FUTEX y
-        FUTEX_PI y
-        WINESYNC m
       '';
     }
   ] ++ addPatches [
     "bbr2"
-    "wine"
-    "clearlinux"
+    #"wine"
+    #"clearlinux"
     #"xanmod"
   ];
 
