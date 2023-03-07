@@ -45,7 +45,7 @@ in
   ] ++ addPatches [
     "bbr2"
     #"wine"
-    #"clearlinux"
+    "clearlinux"
     #"xanmod"
   ];
 
