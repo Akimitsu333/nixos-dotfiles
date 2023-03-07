@@ -15,8 +15,12 @@
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.openweather
     gnomeExtensions.keep-awake
+    # wine
+    wineWowPackages.waylandFull
+    winetricks
     # Tools
     lsof
+    helvum
   ];
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos

@@ -54,7 +54,8 @@ in
     system.nixos.tags = [ "normal-kernel" ];
     musnix.kernel.realtime = lib.mkForce false;
     musnix.rtirq.enable = lib.mkForce false;
-    boot.kernelPatches = lib.mkForce null;
+    boot.kernelPatches = lib.mkForce [ ];
+    hardware.nvidia.powerManagement.enable = true;
   };
 
   # OPENGL & NVIDIA
@@ -96,12 +97,90 @@ in
   zramSwap.algorithm = "lz4";
 
   # SOUND
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
   services.pipewire.enable = true;
   services.pipewire.alsa.enable = true;
   services.pipewire.pulse.enable = true;
   services.pipewire.jack.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
+  services.pipewire.config.pipewire = {
+    "context.properties" = {
+      "link.max-buffers" = 16;
+      "log.level" = 2;
+      "default.clock.rate" = 48000;
+      "default.clock.quantum" = 128;
+      "default.clock.min-quantum" = 128;
+      "default.clock.max-quantum" = 8192;
+      "core.daemon" = true;
+      "core.name" = "pipewire-0";
+    };
+    "context.modules" = [
+      {
+        name = "libpipewire-module-rtkit";
+        args = {
+          "nice.level" = -15;
+          "rt.prio" = 88;
+          "rt.time.soft" = 200000;
+          "rt.time.hard" = 200000;
+        };
+        flags = [ "ifexists" "nofail" ];
+      }
+      { name = "libpipewire-module-protocol-native"; }
+      { name = "libpipewire-module-profiler"; }
+      { name = "libpipewire-module-metadata"; }
+      { name = "libpipewire-module-spa-device-factory"; }
+      { name = "libpipewire-module-spa-node-factory"; }
+      { name = "libpipewire-module-client-node"; }
+      { name = "libpipewire-module-client-device"; }
+      {
+        name = "libpipewire-module-portal";
+        flags = [ "ifexists" "nofail" ];
+      }
+      {
+        name = "libpipewire-module-access";
+        args = { };
+      }
+      { name = "libpipewire-module-adapter"; }
+      { name = "libpipewire-module-link-factory"; }
+      { name = "libpipewire-module-session-manager"; }
+    ];
+  };
+  services.pipewire.config.pipewire-pulse = {
+    "context.properties" = {
+      "log.level" = 2;
+    };
+    "context.modules" = [
+      {
+        name = "libpipewire-module-rtkit";
+        args = {
+          "nice.level" = -15;
+          "rt.prio" = 88;
+          "rt.time.soft" = 200000;
+          "rt.time.hard" = 200000;
+        };
+        flags = [ "ifexists" "nofail" ];
+      }
+      { name = "libpipewire-module-protocol-native"; }
+      { name = "libpipewire-module-client-node"; }
+      { name = "libpipewire-module-adapter"; }
+      { name = "libpipewire-module-metadata"; }
+      {
+        name = "libpipewire-module-protocol-pulse";
+        args = {
+          "pulse.min.req" = "128/48000";
+          "pulse.default.req" = "128/48000";
+          "pulse.max.req" = "8192/48000";
+          "pulse.min.quantum" = "128/48000";
+          "pulse.max.quantum" = "8192/48000";
+          "server.address" = [ "unix:native" ];
+        };
+      }
+    ];
+    "stream.properties" = {
+      "node.latency" = "128/48000";
+      "resample.quality" = 1;
+    };
+  };
 
   ## RT SOUND
   musnix.enable = true;
