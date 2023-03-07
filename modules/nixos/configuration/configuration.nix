@@ -27,21 +27,22 @@
   #musnix.rtirq.enable = true;
 
   ## PATCHES
-  boot.kernelPatches = (builtins.map
-    (name: {
-      inherit name;
-      patch = ./patches + "/${name}";
-    })
-    (builtins.attrNames (builtins.readDir ./patches))) ++ [
-    {
-      name = "xanmod-config";
-      patch = null;
-      extraConfig = ''
-        TCP_CONG_BBR2 y
-        DEFAULT_BBR2 y
-      '';
-    }
-  ];
+  boot.kernelPatches =
+    (builtins.map
+      (name: {
+        inherit name;
+        patch = ./patches + "/${name}";
+      })
+      (builtins.attrNames (builtins.readDir ./patches))) ++ [
+      {
+        name = "xanmod-config";
+        patch = null;
+        extraConfig = ''
+          TCP_CONG_BBR2 y
+          DEFAULT_BBR2 y
+        '';
+      }
+    ];
 
   # OPENGL & NVIDIA
   hardware.opengl.enable = true;
