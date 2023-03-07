@@ -5,7 +5,7 @@ let
     path: (builtins.map
       (name: {
         inherit name;
-        patch = path + "/" + name;
+        patch = "${path}/${name}";
       })
       (builtins.attrNames (builtins.readDir path)));
 in
