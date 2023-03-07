@@ -1,5 +1,14 @@
 { lib, config, pkgs, ... }:
 
+let
+  addpatches =
+    path: (builtins.map
+      (name: {
+        inherit name;
+        patch = path + "/" + name;
+      })
+      (builtins.attrNames (builtins.readDir path)));
+in
 {
   # USERS
   users.users.root.initialHashedPassword = "$6$bYTC78xpdSeyP.zz$9Iha3BmQssdn7oKowzX14cvL8srolQLfjzKqUQ0FqJcID3TOm0L5VP69ok4JqLjcn9ee/FVnVxu.RC/xycOZC/";
@@ -27,22 +36,16 @@
   #musnix.rtirq.enable = true;
 
   ## PATCHES
-  boot.kernelPatches =
-    (builtins.map
-      (name: {
-        inherit name;
-        patch = ./patches + "/${name}";
-      })
-      (builtins.attrNames (builtins.readDir ./patches))) ++ [
-      {
-        name = "xanmod-config";
-        patch = null;
-        extraConfig = ''
-          TCP_CONG_BBR2 y
-          DEFAULT_BBR2 y
-        '';
-      }
-    ];
+  boot.kernelPatches = addpatches ./patches ++ [
+    {
+      name = "xanmod-config";
+      patch = null;
+      extraConfig = ''
+        TCP_CONG_BBR2 y
+        DEFAULT_BBR2 y
+      '';
+    }
+  ];
 
   # OPENGL & NVIDIA
   hardware.opengl.enable = true;
