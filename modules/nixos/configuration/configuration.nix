@@ -30,7 +30,7 @@ in
 
   ## RT PATCH
   musnix.kernel.realtime = true;
-  #musnix.rtirq.enable = true;
+  musnix.rtirq.enable = true;
 
   ## PATCHES
   boot.kernelPatches = [
