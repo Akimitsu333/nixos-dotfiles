@@ -1,13 +1,14 @@
 { lib, config, pkgs, ... }:
 
 let
-  addpatches =
+  _addPatches =
     path: (builtins.map
       (name: {
         inherit name;
-        patch = "${path}/${name}";
+        patch = "./patches/${path}/${name}";
       })
-      (builtins.attrNames (builtins.readDir path)));
+      (builtins.attrNames (builtins.readDir "./patches/${path}")));
+  addPatches = paths: concatLists (builtins.map _addPatches paths);
 in
 {
   # USERS
@@ -36,7 +37,7 @@ in
   #musnix.rtirq.enable = true;
 
   ## PATCHES
-  boot.kernelPatches = addpatches ./patches ++ [
+  boot.kernelPatches = addPatches [ bbr2 ] ++ [
     {
       name = "xanmod-config";
       patch = null;
