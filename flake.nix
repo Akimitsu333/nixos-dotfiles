@@ -13,6 +13,9 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    nix-index-database.url = "github:Mic92/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
     impermanence.url = "github:nix-community/impermanence";
 
     musnix.url = "github:musnix/musnix";

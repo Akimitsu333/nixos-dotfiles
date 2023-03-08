@@ -13,6 +13,8 @@
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.openweather
     gnomeExtensions.keep-awake
+    # Gnome Tools
+    gnome.ghex
     # wine
     wineWowPackages.waylandFull
     winetricks

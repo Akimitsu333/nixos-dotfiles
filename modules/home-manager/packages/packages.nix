@@ -7,6 +7,7 @@
       tdesktop
       glances
       bilibili
+      inkscape
       unstable.clash-verge
       unstable.onlyoffice-bin
       # LSP
@@ -79,5 +80,7 @@
       };
     };
   };
+
+  programs.nix-index.enable = true;
 
 }
