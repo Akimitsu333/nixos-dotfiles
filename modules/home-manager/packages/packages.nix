@@ -8,7 +8,6 @@
       glances
       bilibili
       inkscape
-      unstable.clash-verge
       unstable.onlyoffice-bin
       # LSP
       pyright
@@ -22,7 +21,6 @@
       # Tools
       fd
       ripgrep
-      # nix-index
     ];
 
   home.file = {
