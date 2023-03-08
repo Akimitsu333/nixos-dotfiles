@@ -11,6 +11,7 @@
       "/var/lib/containers"
       "/etc/NetworkManager/system-connections"
       "/etc/nixos"
+      "/etc/clash"
     ];
     files = [
       "/etc/machine-id"
@@ -22,12 +23,12 @@
         { directory = ".local/share/keyrings"; mode = "0700"; }
         #{ directory = ".local/share/Trash"; mode = "0700"; }
         ".config"
-        #".cache"
         ".wine"
         ".mozilla"
         ".vscode-oss"
         ".local/share/fish"
         ".local/share/direnv"
+        ".local/share/fonts"
         ".local/share/TelegramDesktop"
         "downloads"
         "documents"

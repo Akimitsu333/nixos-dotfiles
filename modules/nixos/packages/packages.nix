@@ -18,6 +18,8 @@
     winetricks
     # Tools
     lsof
+    wget
+    unstable.clash-meta
   ];
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos

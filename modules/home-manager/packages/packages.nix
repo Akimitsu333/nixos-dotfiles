@@ -8,6 +8,7 @@
       glances
       bilibili
       unstable.clash-verge
+      unstable.onlyoffice-bin
       # LSP
       pyright
       rust-analyzer
