@@ -26,10 +26,10 @@
         ".wine"
         ".mozilla"
         ".vscode-oss"
-        ".local/share/fish"
         ".local/share/direnv"
         ".local/share/fonts"
         ".local/share/TelegramDesktop"
+        ".cache/blesh"
         "downloads"
         "documents"
         "desktop"
@@ -39,6 +39,9 @@
         "photos"
         "videos"
         "bin"
+      ];
+      files = [
+        ".bash_history"
       ];
     };
   };

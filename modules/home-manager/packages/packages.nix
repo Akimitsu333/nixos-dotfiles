@@ -43,8 +43,13 @@
     extraConfig.safe.directory = "/etc/nixos";
   };
 
-  programs.fish = {
+  programs.bash = {
     enable = true;
+    historyIgnore = [
+      "ls"
+      "cd"
+      "exit"
+    ];
   };
 
   programs.firefox = {
@@ -78,7 +83,5 @@
       };
     };
   };
-
-  programs.nix-index.enable = true;
 
 }

@@ -15,7 +15,7 @@ in
   ];
   users.users.akm.extraGroups = [ "wheel" "audio" "video" "networkmanager" ];
   users.users.akm.isNormalUser = true;
-  users.users.akm.shell = pkgs.fish;
+  #users.users.akm.shell = pkgs.fish;
 
   # BOOT
   boot.loader.timeout = 1;

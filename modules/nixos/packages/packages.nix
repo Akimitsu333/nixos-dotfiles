@@ -18,6 +18,8 @@
     # wine
     wineWowPackages.waylandFull
     winetricks
+    # Bash tools
+    blesh
     # Tools
     lsof
     wget
@@ -61,15 +63,11 @@
       };
     };
 
-    fish = {
-      enable = true;
-      useBabelfish = true;
-      shellInit = ''
-        function fish_greeting
-        echo Hello (whoami)!
-        echo The time is (set_color yellow;date +%T;set_color normal) and this machine is called $hostname
-        end
-      '';
-    };
+    bash.interactiveShellInit = ''
+      source ${pkgs.blesh}/share/ble.sh
+    '';
+    # FIXME: bash.blesh.enable = true; # NixOS 23.05
+
+    # FIXME: nix-index.enable = true; # NixOS 23.05
   };
 }
