@@ -17,6 +17,7 @@ in
   users.users.akm.isNormalUser = true;
   #users.users.akm.shell = pkgs.fish;
 
+
   # BOOT
   boot.loader.timeout = 1;
   boot.loader.systemd-boot.enable = true;
@@ -44,9 +45,7 @@ in
     }
   ] ++ addPatches [
     "bbr2"
-    #"wine"
     "clearlinux"
-    #"xanmod"
   ];
 
   ## NORMAL KERNEL
@@ -57,6 +56,7 @@ in
     boot.kernelPatches = lib.mkForce [ ];
     hardware.nvidia.powerManagement.enable = true;
   };
+
 
   # OPENGL & NVIDIA
   hardware.opengl.enable = true;
@@ -93,9 +93,11 @@ in
     })
   ];
 
+
   # ZSwap
   zramSwap.enable = true;
   zramSwap.algorithm = "lz4";
+
 
   # SOUND
   hardware.pulseaudio.enable = false;
@@ -187,15 +189,18 @@ in
   musnix.enable = true;
   musnix.soundcardPciId = "00:1f.3";
 
+
   # SECURITY
   security.tpm2.enable = true;
   security.sudo.execWheelOnly = true;
   security.sudo.wheelNeedsPassword = false;
 
+
   # NETWORKING
   networking.hostName = "akimitsu";
   networking.firewall.allowedTCPPorts = [ 22 ];
   networking.firewall.allowedUDPPorts = [ 53 ];
+
 
   # GNOME
   services.xserver.enable = true;
@@ -203,6 +208,7 @@ in
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
   services.xserver.desktopManager.gnome.enable = true;
+
 
   # AUTOLOGIN
   services.xserver.displayManager.autoLogin.enable = true;
