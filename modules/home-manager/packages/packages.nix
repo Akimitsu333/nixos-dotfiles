@@ -4,10 +4,10 @@
   home.packages =
     with pkgs; [
       # APP
-      tdesktop
       glances
       bilibili
       inkscape
+      tdesktop
       unstable.onlyoffice-bin
       # LSP
       pyright

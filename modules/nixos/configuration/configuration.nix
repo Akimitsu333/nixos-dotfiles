@@ -62,6 +62,7 @@ in
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.extraPackages = with pkgs; [ vaapiVdpau ];
+  hardware.nvidia.open = true;
   hardware.nvidia.nvidiaSettings = false;
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
