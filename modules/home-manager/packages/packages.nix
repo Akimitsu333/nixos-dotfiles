@@ -21,6 +21,7 @@
       # Tools
       fd
       ripgrep
+      nvtop
     ];
 
   home.file = {

@@ -13,7 +13,7 @@ in
   users.users.akm.openssh.authorizedKeys.keys = [
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHhgRKKn7yq0gAIR9RxevUq7BPDWpCO9iAU56t6+oaEn7MUQxfh6jbGHLsSm2oAgGVwPgTn2MFzUx8PVaBNxZHQ= u0_a311@localhost"
   ];
-  users.users.akm.extraGroups = [ "wheel" "audio" "video" "networkmanager" ];
+  users.users.akm.extraGroups = [ "wheel" "audio" "video" "render" "networkmanager" ];
   users.users.akm.isNormalUser = true;
   #users.users.akm.shell = pkgs.fish;
 
@@ -36,7 +36,7 @@ in
   ## PATCHES
   boot.kernelPatches = [
     {
-      name = "xanmod-config";
+      name = "enable-bbr2";
       patch = null;
       extraConfig = ''
         TCP_CONG_BBR2 y
@@ -48,24 +48,15 @@ in
     "clearlinux"
   ];
 
-  ## NORMAL KERNEL
-  specialisation.normal-kernel.configuration = {
-    system.nixos.tags = [ "laptop" ];
-    musnix.kernel.realtime = lib.mkForce false;
-    musnix.rtirq.enable = lib.mkForce false;
-    boot.kernelPatches = lib.mkForce [ ];
-    hardware.nvidia.powerManagement.enable = true;
-  };
-
 
   # OPENGL & NVIDIA
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
-  hardware.opengl.extraPackages = with pkgs; [ vaapiVdpau ];
+  hardware.opengl.extraPackages = with pkgs; [ nvidia-vaapi-driver ];
   #hardware.nvidia.open = true;
   hardware.nvidia.nvidiaSettings = false;
   hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
 
 
   # I18N

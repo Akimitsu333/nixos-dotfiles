@@ -27,6 +27,7 @@
         ".wine"
         ".mozilla"
         ".vscode-oss"
+        ".local/share/bin"
         ".local/share/direnv"
         ".local/share/fonts"
         ".local/share/TelegramDesktop"
