@@ -28,6 +28,7 @@
         ".vscode-oss"
         ".local/share/direnv"
         ".local/share/fonts"
+        ".local/share/tailscale"
         ".local/share/TelegramDesktop"
         ".cache/blesh"
         "downloads"

@@ -4,5 +4,6 @@
   imports = [
     ./clash-meta.nix
     ./openssh.nix
+    ./tailscale.nix
   ];
 }
