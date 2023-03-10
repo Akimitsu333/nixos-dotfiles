@@ -13,6 +13,7 @@
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.openweather
     gnomeExtensions.keep-awake
+    gnomeExtensions.tailscale-status
     # Gnome Tools
     gnome.ghex
     # wine

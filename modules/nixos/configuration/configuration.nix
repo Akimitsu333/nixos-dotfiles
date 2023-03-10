@@ -198,6 +198,7 @@ in
 
   # NETWORKING
   networking.hostName = "akimitsu";
+  networking.firewall.checkReversePath = "loose"; # For Tailscale
   networking.firewall.allowedTCPPorts = [ 22 ];
   networking.firewall.allowedUDPPorts = [ 53 ];
 
