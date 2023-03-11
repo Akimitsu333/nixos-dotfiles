@@ -40,7 +40,6 @@
         "music"
         "photos"
         "videos"
-        "bin"
       ];
       files = [
         ".bash_history"

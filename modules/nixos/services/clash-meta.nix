@@ -12,7 +12,7 @@
 
     serviceConfig = {
       User = "root";
-      ExecStart = "${pkgs.unstable.clash-meta}/bin/clash-meta -d /etc/clash";
+      ExecStart = "${pkgs.clash-meta}/bin/clash-meta -d /etc/clash";
       LimitNPROC = 500;
       LimitNOFILE = 1000000;
       Restart = "on-failure";

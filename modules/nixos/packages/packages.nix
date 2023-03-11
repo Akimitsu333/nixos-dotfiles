@@ -14,17 +14,13 @@
     gnomeExtensions.openweather
     gnomeExtensions.keep-awake
     gnomeExtensions.tailscale-status
-    # Gnome Tools
-    gnome.ghex
     # wine
     wineWowPackages.waylandFull
     winetricks
-    # Bash tools
-    blesh
     # Tools
     lsof
     wget
-    unstable.clash-meta
+    clash-meta
   ];
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
@@ -64,12 +60,9 @@
       };
     };
 
-    bash.interactiveShellInit = ''
-      source ${pkgs.blesh}/share/ble.sh
-    '';
-    # FIXME: bash.blesh.enable = true; # NixOS 23.05
+    bash.blesh.enable = true; # NixOS 23.05
 
-    # FIXME: nix-index.enable = true; # NixOS 23.05
+    nix-index.enable = true; # NixOS 23.05
     command-not-found.enable = false;
   };
 }

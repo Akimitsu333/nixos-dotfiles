@@ -52,7 +52,7 @@ in
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.extraPackages = with pkgs; [ nvidia-vaapi-driver ];
-  # hardware.nvidia.open = true;
+  hardware.nvidia.open = true;
   hardware.nvidia.nvidiaSettings = false;
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;

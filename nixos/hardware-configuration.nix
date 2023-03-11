@@ -46,7 +46,7 @@
       options = [ "compress_algorithm=zstd:6" "compress_chksum" "atgc" "gc_merge" "lazytime" ];
     };
 
-  fileSystems."/win" =
+  fileSystems."/run/win" =
     {
       device = "/dev/nvme0n1p4";
       fsType = "ntfs3";

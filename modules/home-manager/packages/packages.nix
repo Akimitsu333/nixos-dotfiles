@@ -8,7 +8,7 @@
       bilibili
       inkscape
       tdesktop
-      unstable.onlyoffice-bin
+      onlyoffice-bin
       # LSP
       pyright
       rust-analyzer
