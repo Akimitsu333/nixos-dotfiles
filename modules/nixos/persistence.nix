@@ -13,6 +13,7 @@
       "/etc/NetworkManager/system-connections"
       "/etc/nixos"
       "/etc/clash"
+      "/etc/secureboot"
     ];
     files = [
       "/etc/machine-id"

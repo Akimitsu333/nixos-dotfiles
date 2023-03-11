@@ -26,6 +26,7 @@ in
   boot.initrd.verbose = false;
   boot.initrd.systemd.enable = true;
   boot.supportedFilesystems = [ "ntfs" ];
+  # boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
   boot.kernelParams = [ "quiet" "splash" "udev.log_level=3" "rootflags=atgc" ];
 
   ## RT PATCH
@@ -52,7 +53,7 @@ in
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.extraPackages = with pkgs; [ nvidia-vaapi-driver ];
-  hardware.nvidia.open = true;
+  # hardware.nvidia.open = true;
   hardware.nvidia.nvidiaSettings = false;
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;

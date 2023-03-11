@@ -20,7 +20,8 @@
     # Tools
     lsof
     wget
-    clash-meta
+    unstable.blesh
+    unstable.clash-meta
   ];
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
@@ -60,9 +61,12 @@
       };
     };
 
-    bash.blesh.enable = true; # NixOS 23.05
+    bash.interactiveShellInit = ''
+      source ${pkgs.blesh}/share/ble.sh
+    '';
+    # bash.blesh.enable = true; # NixOS 23.05
 
-    nix-index.enable = true; # NixOS 23.05
+    # nix-index.enable = true; # NixOS 23.05
     command-not-found.enable = false;
   };
 }
