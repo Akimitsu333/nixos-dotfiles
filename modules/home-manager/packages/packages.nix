@@ -6,9 +6,7 @@
       # APP
       glances
       bilibili
-      inkscape
       tdesktop
-      unstable.onlyoffice-bin
       # LSP
       pyright
       rust-analyzer
