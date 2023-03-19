@@ -33,7 +33,7 @@ in
   musnix.kernel.realtime = true;
   musnix.rtirq.enable = true;
 
-  ## PATCHES
+  ## PATCHES FOR 6.1
   boot.kernelPatches = [
     {
       name = "enable-bbr2";
@@ -41,10 +41,15 @@ in
       extraConfig = ''
         TCP_CONG_BBR2 y
         DEFAULT_BBR2 y
+        FUTEX y
+        FUTEX_PI y
+        WINESYNC m
       '';
     }
   ] ++ addPatches [
     "bbr2"
+    "wine"
+    "optimizeO3"
     "clearlinux"
   ];
 

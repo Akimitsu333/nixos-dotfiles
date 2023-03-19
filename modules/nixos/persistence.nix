@@ -13,7 +13,7 @@
       "/etc/NetworkManager/system-connections"
       "/etc/nixos"
       "/etc/clash"
-      "/etc/secureboot"
+      # "/etc/secureboot"
     ];
     files = [
       "/etc/machine-id"
@@ -25,12 +25,13 @@
         { directory = ".local/share/keyrings"; mode = "0700"; }
         #{ directory = ".local/share/Trash"; mode = "0700"; }
         ".config"
-        ".wine"
         ".mozilla"
         ".vscode-oss"
         ".local/share/bin"
         ".local/share/direnv"
         ".local/share/fonts"
+        ".local/share/bottles"
+        ".local/share/applications"
         ".local/share/TelegramDesktop"
         ".cache/blesh"
         "downloads"

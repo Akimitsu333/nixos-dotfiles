@@ -15,8 +15,7 @@
     gnomeExtensions.keep-awake
     gnomeExtensions.tailscale-status
     # wine
-    (wineWowPackages.waylandFull.override { wineBuild = "wine-wow"; })
-    winetricks
+    unstable.bottles
     # Tools
     lsof
     wget
