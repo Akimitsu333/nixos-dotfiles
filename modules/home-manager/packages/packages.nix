@@ -4,9 +4,10 @@
   home.packages =
     with pkgs; [
       # APP
-      glances
+      htop
       bilibili
       tdesktop
+      unstable.motrix
       # LSP
       pyright
       rust-analyzer
@@ -19,7 +20,6 @@
       # Tools
       fd
       ripgrep
-      nvtop
     ];
 
   home.file = {

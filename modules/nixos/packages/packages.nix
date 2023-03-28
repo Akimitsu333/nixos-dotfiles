@@ -42,30 +42,26 @@
     atomix # puzzle game
   ]);
 
-  programs = {
-    gnupg.agent = {
-      enable = true;
+  programs.gnupg.agent.enable = true;
+
+  programs.git.enable = true;
+  programs.git.config = {
+    user = {
+      name = "Akimitsu";
+      email = "2930255852@qq.com";
     };
-
-    git = {
-      enable = true;
-      config = {
-        user = {
-          name = "Akimitsu";
-          email = "2930255852@qq.com";
-        };
-        init = {
-          defaultBranch = "main";
-        };
-      };
+    init = {
+      defaultBranch = "main";
     };
-
-    bash.interactiveShellInit = ''
-      source ${pkgs.blesh}/share/ble.sh
-    '';
-    # bash.blesh.enable = true; # NixOS 23.05
-
-    # nix-index.enable = true; # NixOS 23.05
-    command-not-found.enable = false;
   };
+
+  programs.bash.interactiveShellInit = ''
+    source ${pkgs.blesh}/share/ble.sh
+  '';
+  # bash.blesh.enable = true; # NixOS 23.05
+
+  # nix-index.enable = true; # NixOS 23.05
+  programs.command-not-found.enable = false;
+
+  programs.adb.enable = true;
 }

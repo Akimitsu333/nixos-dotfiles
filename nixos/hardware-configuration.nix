@@ -46,11 +46,11 @@
       options = [ "compress_algorithm=zstd:6" "compress_chksum" "atgc" "gc_merge" "lazytime" ];
     };
 
-  fileSystems."/run/win" =
+  fileSystems."/win" =
     {
       device = "/dev/nvme0n1p4";
       fsType = "ntfs3";
-      options = [ "rw" "uid=1000" "noatime" "prealloc" "noauto" ];
+      options = [ "ro" "uid=1000" "noatime" "prealloc" ];
     };
 
   swapDevices =

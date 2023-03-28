@@ -13,7 +13,7 @@ in
   users.users.akm.openssh.authorizedKeys.keys = [
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHhgRKKn7yq0gAIR9RxevUq7BPDWpCO9iAU56t6+oaEn7MUQxfh6jbGHLsSm2oAgGVwPgTn2MFzUx8PVaBNxZHQ= u0_a311@localhost"
   ];
-  users.users.akm.extraGroups = [ "wheel" "audio" "video" "networkmanager" ];
+  users.users.akm.extraGroups = [ "wheel" "audio" "video" "networkmanager" "adbusers" ];
   users.users.akm.isNormalUser = true;
 
 
