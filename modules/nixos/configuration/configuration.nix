@@ -72,6 +72,7 @@ in
 
 
   # FONTS
+  # fonts.fontDir.enable = true;
   fonts.enableDefaultFonts = true;
   fonts.fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font" "Noto Sans CJK SC" "Noto Color Emoji" ];
   fonts.fontconfig.defaultFonts.serif = [ "Noto Serif" "Noto Color Emoji" ];
@@ -194,7 +195,7 @@ in
 
   # NETWORKING
   networking.hostName = "akimitsu";
-  networking.firewall.checkReversePath = "loose"; # For Tailscale
+  # networking.firewall.checkReversePath = "loose"; # For Tailscale
   networking.firewall.allowedTCPPorts = [ 22 ];
   networking.firewall.allowedUDPPorts = [ 53 ];
 

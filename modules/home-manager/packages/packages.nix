@@ -7,6 +7,8 @@
       htop
       bilibili
       tdesktop
+      unstable.qq
+      unstable.wpsoffice-cn
       unstable.motrix
       # LSP
       pyright
@@ -53,6 +55,7 @@
 
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox-esr;
     profiles.default = {
       settings = {
         "layout.frame_rate" = 144;

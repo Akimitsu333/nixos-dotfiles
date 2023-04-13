@@ -13,7 +13,8 @@
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.openweather
     gnomeExtensions.keep-awake
-    gnomeExtensions.tailscale-status
+    # gnomeExtensions.tailscale-status
+    gnomeExtensions.gtk4-desktop-icons-ng-ding
     # wine
     unstable.bottles
     # Tools

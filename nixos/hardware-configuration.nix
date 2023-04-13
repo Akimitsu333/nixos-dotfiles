@@ -50,7 +50,7 @@
     {
       device = "/dev/nvme0n1p4";
       fsType = "ntfs3";
-      options = [ "ro" "uid=1000" "noatime" "prealloc" ];
+      options = [ "ro" "uid=1000" "noatime" "prealloc" "noauto" ];
     };
 
   swapDevices =

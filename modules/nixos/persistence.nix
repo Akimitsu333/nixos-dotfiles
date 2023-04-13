@@ -9,7 +9,7 @@
       "/var/lib/bluetooth"
       "/var/lib/systemd"
       "/var/lib/containers"
-      "/var/lib/tailscale"
+      # "/var/lib/tailscale"
       "/etc/NetworkManager/system-connections"
       "/etc/nixos"
       "/etc/clash"
