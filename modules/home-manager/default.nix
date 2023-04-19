@@ -4,7 +4,7 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
-  packages = import ./packages;
-  services = import ./services;
-  configuration = import ./configuration;
+  packages = import ./packages.nix;
+  services = import ./services.nix;
+  configuration = import ./configuration.nix;
 }

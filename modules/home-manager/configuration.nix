@@ -1,6 +1,15 @@
 { lib, config, pkgs, ... }:
 
 {
+  # ENV
+  home.sessionVariables = {
+    # Editor
+    EDITOR = "hx";
+    # VSCodium wayland
+    NIXOS_OZONE_WL = 1;
+  };
+
+  # XDG DIR PATHS
   xdg.userDirs.enable = true;
   xdg.userDirs.desktop = "${config.home.homeDirectory}/desktop";
   xdg.userDirs.documents = "${config.home.homeDirectory}/documents";

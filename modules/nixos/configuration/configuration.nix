@@ -18,7 +18,7 @@ in
 
 
   # BOOT
-  boot.loader.timeout = 1;
+  boot.loader.timeout = 3;
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.consoleMode = "max";
   boot.plymouth.enable = true;

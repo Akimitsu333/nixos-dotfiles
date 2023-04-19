@@ -3,7 +3,5 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   bilibili = pkgs.callPackage ./bilibili { };
-  # linux-xanmod-diy = pkgs.callPackage ./linux-xanmod-diy { };
-  maa = pkgs.callPackage ./maa { };
   # example = pkgs.callPackage ./example { };
 }

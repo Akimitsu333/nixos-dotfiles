@@ -59,7 +59,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main nixos configuration file <
-            ./nixos/configuration.nix
+            ./nixos/config.nix
 
             # > Our main home-manager configuration file <
             inputs.home-manager.nixosModules.home-manager
@@ -69,7 +69,7 @@
                 extraSpecialArgs = { inherit inputs outputs; };
                 users = {
                   # Import your home-manager configuration
-                  akm = import ./home-manager/configuration.nix;
+                  akm = import ./home-manager/config.nix;
                 };
               };
             }
