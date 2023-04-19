@@ -33,6 +33,7 @@
         ".local/share/bottles"
         ".local/share/applications"
         ".local/share/TelegramDesktop"
+        ".local/share/android"
         ".cache/blesh"
         "downloads"
         "documents"
