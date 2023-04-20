@@ -11,12 +11,10 @@
       unstable.qq
       unstable.wpsoffice-cn
       unstable.motrix
-      unstable.android-studio
+      unstable.androidStudioPackages.beta
       # Tools
       fd
       ripgrep
-      # Dev
-      androidsdk
     ];
 
   home.file = {

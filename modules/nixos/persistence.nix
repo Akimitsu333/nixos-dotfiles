@@ -24,6 +24,9 @@
         { directory = ".gnupg"; mode = "0700"; }
         { directory = ".local/share/keyrings"; mode = "0700"; }
         #{ directory = ".local/share/Trash"; mode = "0700"; }
+        ".android" # Android Studio
+        ".java" # Android Studio
+        ".gradle" # Android Studio
         ".config"
         ".mozilla"
         ".vscode-oss"
@@ -33,7 +36,7 @@
         ".local/share/bottles"
         ".local/share/applications"
         ".local/share/TelegramDesktop"
-        ".local/share/android"
+        ".local/share/android" # Android Studio
         ".cache/blesh"
         "downloads"
         "documents"
