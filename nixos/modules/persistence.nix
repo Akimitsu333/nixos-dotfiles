@@ -29,7 +29,7 @@
         ".gradle" # Android Studio
         ".config"
         ".mozilla"
-        ".vscode-oss"
+        # ".vscode-oss"
         ".local/share/bin"
         ".local/share/direnv"
         ".local/share/fonts"

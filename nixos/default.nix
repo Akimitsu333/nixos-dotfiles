@@ -73,6 +73,13 @@
         #"https://mirror.sjtu.edu.cn/nix-channels/store"
       ];
     };
+
+    # GC Automation
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

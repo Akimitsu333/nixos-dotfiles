@@ -20,6 +20,8 @@
     # Tools
     lsof
     wget
+    rnix-lsp
+    nixpkgs-fmt
     unstable.blesh
     unstable.clash-meta
   ];

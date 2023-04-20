@@ -43,7 +43,7 @@
       device = "/dev/disk/by-uuid/b81a931a-7586-40c9-9d46-dea1da0938b0";
       fsType = "f2fs";
       neededForBoot = true;
-      options = [ "compress_algorithm=zstd:6" "compress_chksum" "atgc" "gc_merge" "lazytime" ];
+      options = [ "compress_algorithm=zstd:6" "compress_chksum" "atgc" "gc_merge" "noatime" ];
     };
 
   fileSystems."/win" =

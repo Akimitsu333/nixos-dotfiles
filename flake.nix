@@ -47,10 +47,10 @@
       overlays = import ./overlays { inherit inputs; };
       # Reusable nixos modules you might want to export
       # These are usually stuff you would upstream into nixpkgs
-      nixosModules = import ./modules/nixos;
+      nixosModules = import ./nixos/modules;
       # Reusable home-manager modules you might want to export
       # These are usually stuff you would upstream into home-manager
-      homeManagerModules = import ./modules/home-manager;
+      homeManagerModules = import ./home-manager/modules;
 
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
@@ -59,7 +59,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main nixos configuration file <
-            ./nixos/config.nix
+            ./nixos
 
             # > Our main home-manager configuration file <
             inputs.home-manager.nixosModules.home-manager
@@ -69,7 +69,7 @@
                 extraSpecialArgs = { inherit inputs outputs; };
                 users = {
                   # Import your home-manager configuration
-                  akm = import ./home-manager/config.nix;
+                  akm = import ./home-manager;
                 };
               };
             }

@@ -1,9 +1,8 @@
-{ pkgs ? import <nixpkgs> { config.allowUnfree = true; } }:
+with import <nixpkgs> {}:
 
-pkgs.mkShell {
+mkShell {
   buildInputs = with pkgs; [
-    rnix-lsp
-    nixpkgs-fmt
+
   ];
 
 }
