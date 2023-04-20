@@ -6,5 +6,5 @@
   # my-module = import ./my-module.nix;
   packages = import ./packages.nix;
   services = import ./services.nix;
-  configuration = import ./configuration.nix;
+  environment = import ./environment.nix;
 }

@@ -3,6 +3,6 @@
   # my-module = import ./my-module.nix;
   imports = [
     ./configuration.nix
-    ./env.nix
+    ./environment.nix
   ];
 }
