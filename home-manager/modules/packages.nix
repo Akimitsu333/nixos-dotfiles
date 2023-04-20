@@ -141,6 +141,7 @@
       "window.titleBarStyle" = "custom";
       "workbench.startupEditor" = "none";
       "editor.formatOnSave" = "true";
+      "git.confirmSync" = "false";
     };
 
   programs.helix.enable = true;
