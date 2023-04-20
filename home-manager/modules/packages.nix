@@ -96,8 +96,6 @@
   programs.vscode.extensions =
     with pkgs;
     [
-      vscode-extensions.ms-ceintl.vscode-language-pack-zh-hans
-      vscode-extensions.github.github-vscode-theme
       # Nix & Direnv
       vscode-extensions.arrterian.nix-env-selector
       vscode-extensions.jnoortheen.nix-ide
@@ -105,6 +103,18 @@
       # C/C++
       vscode-extensions.llvm-vs-code-extensions.vscode-clangd
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "vscode-language-pack-zh-hans";
+        publisher = "ms-ceintl";
+        version = "1.64.3";
+        sha256 = "sha256-irTSQcVXf/V3MuZwfx4tFcvBk+xhbFZTnb7IG28s/p4=";
+      }
+      {
+        name = "github-vscode-theme";
+        publisher = "github";
+        version = "6.3.4";
+        sha256 = "sha256-JbI0B7jxt/2pNg/hMjAE5pBBa3LbUdi+GF0iEZUDUDM=";
+      }
       {
         name = "dot-icons";
         publisher = "anweber";
@@ -131,6 +141,7 @@
       "workbench.colorTheme" = "GitHub Dark";
       "window.titleBarStyle" = "custom";
       "workbench.startupEditor" = "none";
+      "editor.formatOnSave" = "true";
     };
 
   programs.helix.enable = true;
